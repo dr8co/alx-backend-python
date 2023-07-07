@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+This module contains the variables a, pi, i_understand_annotations, and school
 """
 
 
