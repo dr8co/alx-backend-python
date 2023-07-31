@@ -10,9 +10,6 @@ from utils import (
     access_nested_map,
     get_json,
     memoize,
-    AsyncMock,
-    async_call,
-    GithubOrgClient,
 )
 from fixtures import TEST_PAYLOAD
 
