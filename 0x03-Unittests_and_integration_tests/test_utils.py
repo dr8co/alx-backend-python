@@ -57,8 +57,11 @@ class TestGetJson(unittest.TestCase):
     @patch('requests.get')
     def test_get_json(self, test_url, test_payload, mock_get):
         """
-        Test that utils.get_json returns the expected result.
+        Test that utils.get_json returns the expected result
         """
         mock_get.return_value = Mock(ok=True)
         mock_get.return_value.json.return_value = test_payload
-        self.assertEqual(get_json(test_url), test_payload)
+
+        actual_result = get_json(test_url)
+        self.assertEqual(actual_result, test_payload)
+        mock_get.assert_called_once()
