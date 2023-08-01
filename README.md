@@ -20,3 +20,15 @@ has a lot of resources available online.
 - [Python Tutorial](https://www.sololearn.com/Course/Python/)
 - [Python Tutorial](https://www.codecademy.com/learn/learn-python)
 - [Python Tutorial](https://www.datacamp.com/courses/intro-to-python-for-data-science)
+
+
+## Tasks
+
+- [ ] Create a simple Python program that prints "Hello World!".
+- [ ] Create a simple Python program that takes input from the user and prints it.
+- [ ] Create a simple Python program that takes input from the user and prints the length of the input.
+- [ ] Create a simple Python program that takes input from the user and prints the number of words in the input.
+- [ ] Create a simple Python program that takes input from the user and prints the number of characters in the input.
+- [ ] Create a simple Python program that takes input from the user and prints the number of vowels in the input.
+- [ ] Create a simple Python program that takes input from the user and prints the number of consonants in the input.
+- [ ] Create a simple Python program that takes input from the user and prints the number of digits in the input.
