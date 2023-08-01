@@ -74,3 +74,26 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         test_client = GithubOrgClient("some_org")
         self.assertEqual(test_client.has_license(repo, license_key), expected)
+
+    @patch('client.get_json')
+    def test_public_repos_with_license(self, mock_get_json):
+        """
+        Test that the list of repos is what you expect from the chosen payload
+        """
+        json_payload = [{"name": "Google", "license": {"key": "my_license"}},
+                        {"name": "Twitter", "license": {"key": "other_license"}}]
+        mock_get_json.return_value = json_payload
+
+        with patch('client.GithubOrgClient._public_repos_url',
+                   new_callable=PropertyMock) as mock_public_repos_url:
+
+            mock_public_repos_url.return_value = "hello/world"
+            test_class = GithubOrgClient('test')
+            result = test_class.public_repos(license="apache-2.0")
+
+            check = [i["name"] for i in json_payload if i["license"] and
+                     i["license"]["key"] == "apache-2.0"]
+            self.assertEqual(result, check)
+
+            mock_public_repos_url.assert_called_once()
+            mock_get_json.assert_called_once()
