@@ -80,8 +80,9 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         Test that the list of repos is what you expect from the chosen payload
         """
-        json_payload = [{"name": "Google", "license": {"key": "my_license"}},
-                        {"name": "Twitter", "license": {"key": "other_license"}}]
+        json_payload = [{"name": "Google", "license": {"key": "apache-2.0"}},
+                        {"name": "Twitter", "license": {"key":
+                                                        "other_license"}}]
         mock_get_json.return_value = json_payload
 
         with patch('client.GithubOrgClient._public_repos_url',
